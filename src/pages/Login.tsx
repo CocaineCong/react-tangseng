@@ -12,7 +12,6 @@ import {ProFormCaptcha} from "@ant-design/pro-components";
 import {Code} from "../constant";
 import {save} from "../store/user";
 import {useDispatch} from "react-redux";
-import { AxiosResponse } from 'axios';
 
 const LoginBody: React.FC = () => {
     const navigate = useNavigate()

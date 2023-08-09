@@ -1,0 +1,28 @@
+.footer {
+    background-color: #fff;
+    color: #ffffff;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      .left-logo > {
+        width: 123px;
+        height: 45px;
+        margin-right: 25px;
+      }
+      .right-info {
+        font-size: 12px;
+        display: flex;
+        .footer-item > span {
+          margin-right: 5px;
+        }
+        .footer-item > a {
+          color: #666;
+        }
+        .f-icons {
+          padding-left: 138px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  

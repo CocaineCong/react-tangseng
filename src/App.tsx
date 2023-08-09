@@ -1,10 +1,10 @@
 import './App.css';
-import {Footer} from "antd/es/layout/layout";
 import React, {useEffect} from 'react';
 import './App.css';
 import {useLocation, useNavigate, useRoutes} from "react-router-dom";
 import routes from "./router";
 import {message,Layout} from "antd";
+import Footer from './components/Footer';
 
 function App() {
   const location = useLocation()
@@ -13,7 +13,7 @@ function App() {
           <Layout>
             <BeforeRouterEnter />
           </Layout>
-      {location.pathname === '/Login' ? null : <Footer />}
+      {/* {location.pathname !== '/Login' ? null : <Footer />} */}
       </div>
   );
 }
