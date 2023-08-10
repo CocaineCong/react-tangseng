@@ -1,23 +1,20 @@
 .search-home{
-    position: relative;
+    position: fixed;
     width: 50%;
     display: flex;
     justify-content: center;
     background: #ffffff;
-    left: 17%;
-    margin-top: 20%;
+    left: 24%;
+    border-radius: 50px;
+    margin-top: 10%;
 }
 
 .search-input{
     font-size: 30px;
     padding: 20px;
-}
-
-.search-input-box{
-    width: 200px;
-    height: 50px;
-    margin: 20px;
-    border: 1px solid #736e6e;
-    border-radius: 5px;
-    box-shadow:4px 4px 15px rgb(64, 62, 62);
+    padding-left: 30px;
+    width: 100%;
+    border: 1px solid #000000;
+    border-radius: 50px;
+    box-shadow:4px 4px 15px rgb(0, 0, 0);
 }

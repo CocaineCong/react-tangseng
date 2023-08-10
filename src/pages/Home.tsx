@@ -12,14 +12,11 @@ const { Search } = Input;
 const onSearch = (value: string) => console.log(value);
 
 const Home: React.FC = () => {
-return (
-    <div className='search-home'>
-        <div className='search-input-box'>
-            <input className='search-input' name="password" ></input>
+    return (
+        <div className='search-home'>
+            <input className='search-input' placeholder='搜不了一点' name="password" ></input>
         </div>
-    </div>
-);
-
+    );
 };
 
 export default Home;
