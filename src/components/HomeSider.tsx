@@ -34,17 +34,14 @@ const items: MenuItem[] = [
 function HomeSider(){
     const location = useLocation()
     const navigateTo = useNavigate()
-    const [defaultKey, setDefaultKey] = useState<string>('/Story/List')
     
     // 一般加个空数组就是为了模仿componentDidMounted
     useEffect(()=>{
         let path = location.pathname;
         let key = path.split('/')[1];
-        setDefaultKey(key)
     }, [location.pathname])
     
     const menuClick = (e:{key:string})=>{
-        setDefaultKey(e.key)
         navigateTo(e.key)
     }
     

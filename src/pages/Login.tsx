@@ -51,18 +51,18 @@ const LoginBody: React.FC = () => {
     return (
         <div className="login">
             <div className="loginCardBox">
-                <div className="loginCardTitle">去看看大千万物</div>
+                <div className="loginCardTitle">大千万物</div>
                 <div className="loginCardSubTitle">所想所寻,应有尽有</div>
                 <div className="loginCardAction">
                     <Button className="loginCardButton">
-                        <span>去看看</span>
+                        <span>搜搜看</span>
                     </Button>
                 </div>
             </div>
             <div className="loginBox">
                 <div className='loginForm'>
                     <h1 className={'loginFormText'}> 登 陆 </h1>
-                    <p className={'loginFormTextSub'}>FanOne Mall</p>
+                    <p className={'loginFormTextSub'}>Tangseng Engine</p>
                     <Tabs centered activeKey={loginType} onChange={setLoginType} items={items}></Tabs>
 
                     {

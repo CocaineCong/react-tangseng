@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, message, Form, Input, Alert} from 'antd';
-import {LockOutlined, MailOutlined, UserOutlined} from '@ant-design/icons';
+import {LockOutlined, UserOutlined} from '@ant-design/icons';
 import {Link,useNavigate} from 'react-router-dom'
 import "../assets/styles/login.scss"
 import {register} from "../api/user";
@@ -30,7 +30,7 @@ const Register: React.FC = () =>  {
             <div className="registerBox">
                 <div className='registerForm'>
                     <h1>注 册</h1>
-                    <h2> Welcome To FanOne Mall </h2> 
+                    <h2> Welcome To Tangseng Engine </h2> 
                     <br></br>
                     <br></br>
                     <Form
