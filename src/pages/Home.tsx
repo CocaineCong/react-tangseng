@@ -20,7 +20,7 @@ const Home: React.FC = () => {
                 </div>
                 <div className="searchbar">
                     <img src={require('../assets/images/search.png')} className="mg" />
-                    <input type="text" id="search" value="Search Google or type a URL" 
+                    <input type="text" id="search" placeholder="Search Tangseng or type a URL" 
                         // onFocus="if(value=='Search Google or type a URL')value=''" 
                         // onblur="if(!value)value='Search Google or type a URL'" 
                         name="keyword" /> 
