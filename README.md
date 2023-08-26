@@ -11,6 +11,7 @@ still coding!! react is so funking hard!!!
 - [ ] 引入refresh_token
 - [ ] 模仿谷歌搜索引擎页面
 - [ ] 搜索的时候，点击会有下拉历史选择（前端存在缓存里面）
+- [ ] 当开始输入的时候，从后端返回相似的搜索数据
 
 
 # 页面
@@ -25,4 +26,4 @@ still coding!! react is so funking hard!!!
 
 搜索页面
 
-![搜索](./src/assets/images/search-page.png)
+![搜索](./src/assets/images/search-page2.jpg)

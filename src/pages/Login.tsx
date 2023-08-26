@@ -187,8 +187,6 @@ const LoginBody: React.FC = () => {
                             <WeiboOutlined style={Object.assign(Object.assign({}, iconStyles), { color: '#333333' })}/>
                         </div>
                     </Space>
-
-
                 </div>
             </div>
         </div>

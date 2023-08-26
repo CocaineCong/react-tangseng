@@ -72,3 +72,23 @@ img.logo {
 #search, .mcp, .mg {
     vertical-align: middle;
 }
+
+p {
+    line-height: 35px;
+    margin: 0 10px 0 10px;
+}
+
+.search-header{
+    display: flex;
+    align-items: center;    
+    justify-content: flex-end;  
+}
+
+img.menu {
+    width: 20px;
+    margin: 10px;
+}
+img.name {
+    width: 35px;
+    margin: 10px;
+}
