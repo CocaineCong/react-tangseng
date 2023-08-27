@@ -1,17 +1,42 @@
-import React from 'react';
-import {Divider, Layout} from 'antd';
-import {Outlet} from "react-router-dom";
-import HomeSider from '../components/HomeSider';
-import Header from '../components/Header';
-import { AudioOutlined } from '@ant-design/icons';
-import { Input, Space } from 'antd';
+import React, { useState } from 'react';
+import { Input } from 'antd';
 import "../assets/styles/home.scss"
+import { searchEngineQuery, searchEngineSearch } from '../api/search-engine';
+import { Code } from '../constant';
+import { useNavigate } from 'react-router-dom';
 
-const { Search } = Input;
-
-const onSearch = (value: string) => console.log(value);
 
 const Home: React.FC = () => {
+    const [queryList,setQueryList] = useState([]);
+    const [query,setQuery] = useState('');
+    const navigate = useNavigate()
+
+    const searchQuery = async (e:any) => {
+        setQuery(e?.target?.value)
+        // if (query !== "") {
+            // const data:any = await searchEngineQuery({value:query})
+            // console.log("data",data)
+            // if (data?.status === Code.SuccessCode){
+            //     console.log("data",data)
+            //     // setQueryList(data?.data)
+            // }
+        // }
+    }
+
+    const onSearch = async(event:any)=> {
+        if (event.keyCode === 13) {
+          // 回车键被按下
+          console.log("query is",query)
+          const data:any = await searchEngineSearch({query:query})
+          console.log("data",data)
+          if (data.status === Code.SuccessCode) {
+                setTimeout(()=>{
+                    navigate('/search_detail')
+                } ,800)
+            } 
+        }
+      }
+    
     return (
         <div className='search-home'>
             <div className='search-content'>
@@ -20,12 +45,18 @@ const Home: React.FC = () => {
                 </div>
                 <div className="searchbar">
                     <img src={require('../assets/images/search.png')} className="mg" />
-                    <input type="text" id="search" placeholder="Search Tangseng or type a URL" 
-                        // onFocus="if(value=='Search Google or type a URL')value=''" 
+                    <input 
+                        type="text" 
+                        id="search" 
+                        placeholder="Search Tangseng or type a URL" 
+                        // onFocus= {searchQuery}
+                        onChange={searchQuery}
+                        value={query}
+                        onKeyDown={onSearch}
                         // onblur="if(!value)value='Search Google or type a URL'" 
                         name="keyword" /> 
-                    <img  src={require('../assets/images/microphone.png')} className="mcp" />
-                </div>  
+                    <img src={require('../assets/images/microphone.png')} className="mcp" />
+                </div>
             </div>
         </div>
     );
