@@ -24,14 +24,13 @@ const Home: React.FC = () => {
     }
 
     const onSearch = async(event:any)=> {
-        if (event.keyCode === 13) {
-          // 回车键被按下
+        if (event.keyCode === 13) {// 回车键被按下
           console.log("query is",query)
           const data:any = await searchEngineSearch({query:query})
           console.log("data",data)
           if (data.status === Code.SuccessCode) {
                 setTimeout(()=>{
-                    navigate('/search_detail')
+                    navigate('/SearchDetail')
                 } ,800)
             } 
         }
