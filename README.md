@@ -27,3 +27,5 @@ still coding!! react is so funking hard!!!
 搜索页面
 
 ![搜索](./src/assets/images/search-page2.jpg)
+
+![搜索详情](./src/assets/images/search-detail.jpg)
