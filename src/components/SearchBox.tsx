@@ -1,30 +1,24 @@
-import { AudioOutlined } from '@ant-design/icons';
 import React from 'react';
-import { Input, Space } from 'antd';
+import "../assets/styles/search-detail.scss"
 
-const { Search } = Input;
+const SearchBox: React.FC = () => {
 
-const suffix = (
-  <AudioOutlined
-    style={{
-      fontSize: 16,
-      color: '#1677ff',
-    }}
-  />
-);
-
-const onSearch = (value: string) => console.log(value);
-
-const SearchBox: React.FC = () => (
-  <Space direction="vertical">
-    <Search
-      placeholder="input search text"
-      enterButton="Search"
-      size="large"
-      suffix={suffix}
-      onSearch={onSearch}
-    />
-  </Space>
-);
+    return(
+        <div className='search-home'>
+            <div className='search-content'>
+                <div id="logo"></div>
+            </div>
+            <div className="searchbar">
+                <img src={require('../assets/images/search.png')} className="mg" />
+                <input 
+                    type="text" 
+                    id="search" 
+                    placeholder="Search Tangseng or type a URL" 
+                    name="keyword" /> 
+                <img src={require('../assets/images/microphone.png')} className="mcp" />
+            </div>
+        </div>
+    )
+};
 
 export default SearchBox;

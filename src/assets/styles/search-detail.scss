@@ -2,8 +2,97 @@
     height: 100%;
     width: 100%;
     background: #ffffff;
+    position: relative;
 }
 
-.search-deatil-box{
+.search-home{
+    width: 100%;
+    display: flex;
+    margin-left: 2%;
+    background: #ffffff;
+    z-index: 10;
+}
 
+.search-input{
+    font-size: 30px;
+    padding: 20px;
+    padding-left: 30px;
+    width: 100%;
+    border: 1px solid #000000;
+    border-radius: 50px;
+    box-shadow:4px 4px 15px rgb(0, 0, 0);
+}
+
+img.menu {
+    width: 20px;
+    margin: 10px;
+}
+
+img.name {
+    width: 35px;
+    margin: 10px;
+}
+/*header end*/
+
+
+#logo{
+    text-align: center;
+}
+
+img.logo {
+    width: 50%;    
+}
+
+#othernav {
+    text-align: center;
+}
+
+#search { 
+    width:82%;
+    height: 40px;
+    border:none;    /*取消默认的边框以设置自定义边框*/
+    outline:none;   /*取消浏览器默认的蓝光边框以设置自定义的输入框*/
+    font-size: 16px;        
+    color: rgb(112, 112, 112);
+}
+
+.searchbar {        /*目的是设置自定义边框，比如圆角与阴影*/
+    border: rgb(125, 123, 123) solid 1px;
+    border-radius: 2em;
+    width: 53%;
+    height: 42px;
+    box-shadow: 0px 0px 5px rgb(212, 212, 212);
+}
+
+.mcp {
+    height: 35px;
+}
+
+.mg {
+    height: 25px;
+    margin-right: 10px;
+}
+
+#search, .mcp, .mg {
+    vertical-align: middle;
+}
+
+p {
+    line-height: 35px;
+    margin: 0 10px 0 10px;
+}
+
+.search-header{
+    display: flex;
+    align-items: center;    
+    justify-content: flex-end;  
+}
+
+img.menu {
+    width: 20px;
+    margin: 10px;
+}
+img.name {
+    width: 35px;
+    margin: 10px;
 }
