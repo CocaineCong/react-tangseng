@@ -14,13 +14,13 @@ const SearchDetail: React.FC = () => {
     const [position, setPosition] = useState<PaginationPosition>('bottom');
     const [align, setAlign] = useState<PaginationAlign>('center');
     const [searchResList, setSearchResList] = useState<API.SearchResultRespDataSearchList[]>();
+    const [query, setQuery] = useState('');
     const [params] = useSearchParams()
-    let query = params.get('query')
+    let param = params.get('query')
 
     const tangsengSearch = async()=> {
-        console.log("query is",query)
         const res:AxiosResponse<API.SearchResultResp> = await searchEngineSearch({query:query})
-        console.log("data",res)
+        setQuery(query)
         if (res?.status === Code.SuccessCode) {
             // @ts-ignore //TODO: 优化一下
             var resList = res?.data?.search_engine_info_list

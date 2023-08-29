@@ -1,8 +1,9 @@
 import React from 'react';
 import "../assets/styles/search-detail.scss"
 
-const SearchBox: React.FC = () => {
-
+const SearchBox: React.FC = (props: any) => {
+    const info:any=props;
+    
     return(
         <div className='search-home'>
             <div className='search-content'>
@@ -14,7 +15,9 @@ const SearchBox: React.FC = () => {
                     type="text" 
                     id="search" 
                     placeholder="Search Tangseng or type a URL" 
-                    name="keyword" /> 
+                    name="keyword" 
+                    defaultValue={info}
+                    /> 
                 <img src={require('../assets/images/microphone.png')} className="mcp" />
             </div>
         </div>
