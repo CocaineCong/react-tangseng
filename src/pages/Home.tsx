@@ -26,7 +26,7 @@ const Home: React.FC = () => {
         if (event.keyCode === 13) { // 回车键被按下
             setTimeout(()=>{
                 navigate('/SearchDetail?query='+query, {replace:true})
-            } ,200)
+            })
         }
       }
     
