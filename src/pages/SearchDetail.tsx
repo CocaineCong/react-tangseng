@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Divider, List } from 'antd';
 import '../assets/styles/search-detail.scss'
-import SearchBox from '../components/SearchBox';
 import { useSearchParams } from 'react-router-dom';
 import { searchEngineSearch } from '../api/search-engine';
 import { Code } from '../constant';
@@ -30,11 +29,34 @@ const SearchDetail: React.FC = () => {
         tangsengSearch()
     },[])
 
+    const handleKeyDown = async (event:any) => {
+        if (event.keyCode === Code.KEY_CODE_DOWN) {
+            const res:any = await searchEngineSearch({query:event?.target?.value})
+            setQuery(event?.target?.value)
+            if (res?.status === Code.SuccessCode) {
+                var resList = res?.data?.search_engine_info_list
+                setSearchResList(resList)
+            }
+        }
+    }
+
     return (
         <div className='search-detail-contain'>
             <div className='search-detail-header'>
-                {/* @ts-ignore */}
-                <SearchBox query={query}/>
+                <div className='search-home-compose'>
+                    <div className="searchbar-compose">
+                        <img src={require('../assets/images/search.png')} className="mg" />
+                        <input 
+                            type="text" 
+                            id="search" 
+                            placeholder="Search Tangseng or type a URL" 
+                            name="keyword" 
+                            defaultValue={query}
+                            onKeyDown={handleKeyDown}
+                        /> 
+                        <img src={require('../assets/images/microphone.png')} className="mcp" />
+                    </div>
+                </div>
             </div>
             <Divider />
             <List
