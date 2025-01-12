@@ -14,7 +14,7 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                 Tangseng 搜素索引 {' '}
+                Tangseng 搜素索引{' '}
               </a>
             </p>
             <p className="footer-item">
