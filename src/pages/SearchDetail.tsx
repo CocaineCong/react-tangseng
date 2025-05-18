@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Divider, List, Spin } from 'antd'; // 引入Spin组件
+import { Divider, List, Spin, Tag, Flex } from 'antd'; // 引入Spin组件
 import '../assets/styles/search-detail.scss';
 import { useSearchParams } from 'react-router-dom';
 import { searchEngineSearch } from '../api/search-engine';
@@ -14,6 +14,8 @@ const SearchDetail: React.FC = () => {
   const [searchResList, setSearchResList] =
     useState<API.SearchResultRespDataSearchList[]>();
   const [query, setQuery] = useState<any>();
+  const [count, setCount] = useState<number>();
+  const [consumingTime, setconsumingTime] = useState<number>();
   const [loading, setLoading] = useState<boolean>(false); // 新增loading状态
   const [params] = useSearchParams();
   let param = params.get('query');
@@ -25,7 +27,11 @@ const SearchDetail: React.FC = () => {
     setLoading(false); // 数据加载完成后，设置loading为false
     if (res?.status === Code.SuccessCode) {
       const resList = res?.data?.search_engine_info_list;
+      const count = res?.data?.count;
+      const consumingTime = res?.data?.consuming_time;
       setSearchResList(resList);
+      setCount(count);
+      setconsumingTime(consumingTime);
     }
   };
 
@@ -62,14 +68,15 @@ const SearchDetail: React.FC = () => {
               defaultValue={query}
               onKeyDown={handleKeyDown}
             />
-            <img
-              src={require('../assets/images/microphone.png')}
-              className="mcp"
-            />
+            <img src={require('../assets/images/microphone.png')} className="mcp" />
           </div>
         </div>
       </div>
-      <Divider />
+      <Flex style={{ marginLeft:20 }} >
+          <Tag color="magenta">搜索出: {count} 个结果</Tag>
+          <Tag color="red">总计耗时: {consumingTime} s</Tag>
+      </Flex>
+      <Divider size="small" />
 
       {/* 在加载数据时显示 Spin 动画 */}
       {loading ? (

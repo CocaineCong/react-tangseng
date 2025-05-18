@@ -15,6 +15,8 @@ declare namespace API {
     export type SearchResultRespData = {
         code?: number;
         search_engine_info_list?: SearchResultRespDataSearchList[];
+        consuming_time?: number;
+        count?: number;
     }
 
     export type SearchQueryResp = {
